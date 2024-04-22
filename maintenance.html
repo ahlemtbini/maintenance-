@@ -1,90 +1,117 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maintenance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maintenance</title>
 <style>
-    body, html {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: serif;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f4f4f4; /* Improved background color for better readability */
+}
 
-    .full-screen {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background-color: white; /* Assuming 'bg-lm_white' is white */
-    }
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    .background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Full background cover */
-        z-index: -1;
-    }
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .maintenance-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Keeps the aspect ratio */
-    }
+.content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Limit max width and ensure padding */
+  max-width: 600px; /* Max width for larger screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-    .message-box {
-        height: fit-content;
-        width: 125%;
-        max-width: 75%; /* Large screens */
-        border: 1px solid #ccc;
-        border-radius: 1px;
-        background-color: rgba(255, 255, 255, 0.4);
-        margin: 20px auto;
-        padding: 25px;
-        z-index: 40;
-        text-align: center;
-    }
+.content-wrapper img {
+  width: 100%; /* Make image responsive */
+  max-width: 500px; /* Max width for image */
+}
 
-    h3 {
-        color: #1a1a1a;
-        font-size: 50px; /* Large text size */
-        font-weight: bold;
-        padding-bottom: 25px;
-    }
+.info-box {
+  background-color: rgba(255, 255, 255, 0.4); /* Enhanced readability with higher opacity */
+  border-radius: 100px; /* More suitable border-radius */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Added subtle shadow for depth */
+}
 
-    p {
-        color: #1a1a1a;
-        font-size: 20px;
-        padding-bottom: 20px;
-    }
+h3, p {
+  margin: 0 0 20px; /* Adjusted margins for uniform spacing */
+}
 
-    .icon {
-        font-size: 16px; /* Example size for icons, adjust as necessary */
-    }
+h3 {
+  font-size: 24px; /* Responsive font size */
+}
+
+p {
+  font-size: 16px; /* Responsive font size */
+}
+
+/* Media queries for various screen sizes */
+@media (min-width: 768px) {
+  .content-wrapper {
+    max-width: 700px;
+  }
+  
+  .content-wrapper img {
+    max-width: 350px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-wrapper {
+    max-width: 800px;
+  }
+
+  .content-wrapper img {
+    max-width: 500px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
 </style>
 </head>
 <body>
-    <div class="full-screen">
-        <img src="overlay_4.jpg" class="background-image" alt="Background image">
-        <img src="maintenance.svg" class="maintenance-image" alt="Maintenance image">
-        <div class="message-box">
-            <h3>Bientôt en ligne</h3>
-            <p>
-                Notre site est temporairement indisponible en raison d'une maintenance programmée. Nous nous excusons pour le désagrément et apprécions votre patience.
-                <span class="icon">&#9881;</span>
-            </p>
-            <p>
-                Pour toute question ou assistance, n'hésitez pas à nous contacter aux adresses suivantes : formation@svr.com et formation@lazartigue.com.
-                <span class="icon">&#9881;</span>
-            </p>
-        </div>
+  <div class="container">
+    <img src="overlay_4.jpg" alt="Background image">
+    <div class="content-wrapper">
+      <img src="maintenance.svg" alt="Maintenance image">
+      <div class="info-box">
+        <h3>Bientôt en ligne</h3>
+        <p>Notre site est temporairement indisponible en raison d'une maintenance programmée. Nous nous excusons pour le désagrément et apprécions votre patience.</p>
+        <p>Pour toute question ou assistance, n'hésitez pas à nous contacter aux adresses suivantes : formation@svr.com et formation@lazartigue.com.</p>
+      </div>
     </div>
+  </div>
 </body>
 </html>
